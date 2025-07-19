@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "my-quran-journey",
   "builds": [
     {
       "src": "frontend/package.json",
@@ -8,17 +7,9 @@
       "config": {
         "distDir": "build"
       }
-    },
-    {
-      "src": "backend/server.py",
-      "use": "@vercel/python"
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "backend/server.py"
-    },
     {
       "src": "/(.*)",
       "dest": "frontend/build/$1"
